@@ -27,7 +27,7 @@ public:
 	}
 
 	// 表示
-	long long get_ll() {
+	long long get_num() {
 		return num;
 	}
 
@@ -40,12 +40,12 @@ public:
 	// 演算子オーバーロード
 
 	// =
-	Modulo operator=(Modulo obj) {
+	Modulo &operator=(Modulo obj) {
 		num = obj.num;
 		return *this;
 	}
 
-	Modulo operator=(long long obj) {
+	Modulo &operator=(long long obj) {
 		num = obj;
 		num %= mod;
 		num += mod;
@@ -53,7 +53,7 @@ public:
 		return *this;
 	}
 
-	Modulo operator=(int obj) {
+	Modulo &operator=(int obj) {
 		num = (long long)obj;
 		num %= mod;
 		num += mod;
@@ -151,12 +151,12 @@ public:
 	}
 
 	// +=
-	Modulo operator+=(Modulo obj) {
+	Modulo &operator+=(Modulo obj) {
 		num += obj.num;
 		num %= mod;
 		return *this;
 	}
-	Modulo operator+=(long long obj) {
+	Modulo &operator+=(long long obj) {
 		obj %= mod;
 		obj += mod;
 		obj %= mod;
@@ -164,7 +164,7 @@ public:
 		num %= mod;
 		return *this;
 	}
-	Modulo operator+=(int obj) {
+	Modulo &operator+=(int obj) {
 		long long new_obj = (long long)obj;
 		new_obj %= mod;
 		new_obj += mod;
@@ -175,13 +175,13 @@ public:
 	}
 
 	// -=
-	Modulo operator-=(Modulo obj) {
+	Modulo &operator-=(Modulo obj) {
 		num -= obj.num;
 		num += mod;
 		num %= mod;
 		return *this;
 	}
-	Modulo operator-=(long long obj) {
+	Modulo &operator-=(long long obj) {
 		obj %= mod;
 		obj += mod;
 		obj %= mod;
@@ -190,7 +190,7 @@ public:
 		num %= mod;
 		return *this;
 	}
-	Modulo operator-=(int obj) {
+	Modulo &operator-=(int obj) {
 		long long new_obj = (long long)obj;
 		new_obj %= mod;
 		new_obj += mod;
@@ -202,17 +202,17 @@ public:
 	}
 
 	// *=
-	Modulo operator*=(Modulo obj) {
+	Modulo &operator*=(Modulo obj) {
 		num *= obj.num;
 		num %= mod;
 		return *this;
 	}
-	Modulo operator*=(long long obj) {
+	Modulo &operator*=(long long obj) {
 		num *= obj;
 		num %= mod;
 		return *this;
 	}
-	Modulo operator*=(int obj) {
+	Modulo &operator*=(int obj) {
 		long long new_obj = (long long)obj;
 		num *= new_obj;
 		num %= mod;
@@ -220,17 +220,17 @@ public:
 	}
 
 	// /=
-	Modulo operator/=(Modulo obj) {
+	Modulo &operator/=(Modulo obj) {
 		num *= mod_inv(obj.num);
 		num %= mod;
 		return *this;
 	}
-	Modulo operator/=(long long obj) {
+	Modulo &operator/=(long long obj) {
 		num *= mod_inv(obj);
 		num %= mod;
 		return *this;
 	}
-	Modulo operator/=(int obj) {
+	Modulo &operator/=(int obj) {
 		long long new_obj = (long long)obj;
 		num *= mod_inv(new_obj);
 		num %= mod;
@@ -263,10 +263,11 @@ public:
 	// a^n の計算
 
 	Modulo mod_pow(long long n) {
+		long long a = num;
 		long long res = 1;
 		while (n > 0) {
-			if (n & 1) res = res * n % mod;
-			n = n * n % mod;
+			if (n & 1) res = res * a % mod;
+			a = a * a % mod;
 			n >>= 1;
 		}
 		return Modulo(res, mod);
