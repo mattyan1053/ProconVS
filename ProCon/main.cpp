@@ -20,20 +20,15 @@ using namespace std;
 #define eb emplace_back
 #define fst first
 #define scd second
-#define EPS (1e-7)
-#define INF (1e9)
-#define PI (acos(-1))
-#define YES(n) cout << ((n) ? "YES" : "NO" ) << endl
-#define Yes(n) cout << ((n) ? "Yes" : "No" ) << endl
 
-constexpr int MOD = 1000000007;
+constexpr int mod = 1000000007;
 
-typedef long long ll;
-typedef unsigned long long ull;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<vector<int>> vii;
-typedef vector<ll> vl;
+using ll = long long;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vector<int>>;
+using vl = vector<ll>;
 
 ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
 
