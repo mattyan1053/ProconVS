@@ -17,11 +17,6 @@
 
 using namespace std;
 #define endl '\n'
-#define eb emplace_back
-#define fst first
-#define scd second
-
-constexpr int mod = 1000000007;
 
 using ll = long long;
 using ull = unsigned long long;
