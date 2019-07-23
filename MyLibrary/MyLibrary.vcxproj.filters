@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\Math">
       <UniqueIdentifier>{fb44f067-922d-4664-9ecc-7c604cbf0ca0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Graph">
+      <UniqueIdentifier>{ff7233b4-67ba-4366-b72c-09448e7f9021}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mint.cpp">
@@ -23,6 +26,12 @@
     </ClCompile>
     <ClCompile Include="Euclid.cpp">
       <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Cases.cpp">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionFind.cpp">
+      <Filter>ソース ファイル\Graph</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
