@@ -25,7 +25,8 @@ using vi = vector<int>;
 using vvi = vector<vector<int>>;
 using vl = vector<ll>;
 
-ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
+template<typename T = long long>
+T gcd(T a, T b) { return b ? gcd(b, a%b) : a; }
 
 // value
 
