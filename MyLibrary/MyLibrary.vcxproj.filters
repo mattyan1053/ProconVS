@@ -21,7 +21,7 @@
     <ClCompile Include="Mint.cpp">
       <Filter>ソース ファイル\Math</Filter>
     </ClCompile>
-    <ClCompile Include="euclid.cpp">
+    <ClCompile Include="Euclid.cpp">
       <Filter>ソース ファイル\Math</Filter>
     </ClCompile>
   </ItemGroup>
